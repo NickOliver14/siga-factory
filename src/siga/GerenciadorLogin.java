@@ -20,6 +20,12 @@ package siga;
  */
 public class GerenciadorLogin {
 
+/*
+A classe GerenciadorLogin, no método montarPainel, viola o princípio OCP, 
+pois é necessário modificá-la ao adicionar novos tipos de usuários.
+Para resolver, pode-se utilizar Simple Factory ou Factory Method,
+reduzindo o acoplamento e facilitando extensões.
+*/
     public Painel montarPainel(String tipoUsuario) {
         Painel painel;
 
