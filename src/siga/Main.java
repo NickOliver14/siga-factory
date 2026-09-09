@@ -16,11 +16,11 @@ public class Main {
         GerenciadorLogin login = new GerenciadorLogin();
 
         // Simulação de logins de diferentes perfis.
-        login.montarPainel("ALUNO");
+        login.montarPainel(new CriadorPainelAluno());
         System.out.println();
-        login.montarPainel("PROFESSOR");
+        login.montarPainel(new CriadorPainelProfessor());
         System.out.println();
-        login.montarPainel("COORDENADOR");
+        login.montarPainel(new CriadorPainelCoordenador());
 
         System.out.println("\nObserve: para adicionar um novo perfil (ex.: SECRETARIA),");
         System.out.println("é preciso MODIFICAR o if/else de GerenciadorLogin. Sua tarefa");

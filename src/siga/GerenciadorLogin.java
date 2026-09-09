@@ -9,9 +9,8 @@ Para resolver, pode-se utilizar Simple Factory ou Factory Method,
 reduzindo o acoplamento e facilitando extensões.
 */
     // Instanciando a fábrica painel
-    private final FabricaPainel fabrica = new FabricaPainel();
 
-    public Painel montarPainel(String tipoUsuario) {
+    public Painel montarPainel(CriadorPainel factory) {
         // Painel painel;
 
         // // Violação do OCP: um novo perfil = mais um ramo condicional aqui.
@@ -27,7 +26,7 @@ reduzindo o acoplamento e facilitando extensões.
 
         // Utilização do método criar da fábrica para reconhecer o tipo do usuário e retornar
         // a classe referente a ele
-        Painel painel = fabrica.criar(tipoUsuario);  // delega a criação
+        Painel painel = factory.criarPainel();  // delega a criação
         painel.montar(); // Utilizando método montar da interface painel
         return painel;
     }
